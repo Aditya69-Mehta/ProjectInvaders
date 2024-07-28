@@ -7,14 +7,14 @@ using UnityEngine;
 
 public class EnemyScript : MonoBehaviour
 {
-    [SerializeField] ParticleSystem enemyExplosionVFX;
+    [SerializeField] ParticleSystem enemyExplosionVFXnSFX;
     [SerializeField] ParticleSystem enemyHitVFX;
 
     [SerializeField] int enemyHitPoint = 1;
     [SerializeField] int enemyHealthPoints = 1;
 
-    [SerializeField] float visibleTime = 0f;
-    [SerializeField] float selfDestructTime = 5f;
+    // [SerializeField] float visibleTime = 0f;
+    // [SerializeField] float selfDestructTime = 5f;
 
 
     GameObject spawnParent;
@@ -59,8 +59,8 @@ public class EnemyScript : MonoBehaviour
 
     void EnemySpawnAndDestroy()
     {
-        ParticleSystem vfx = Instantiate(enemyExplosionVFX, transform.position, Quaternion.identity);
-        vfx.transform.parent = spawnParent.transform;
+        ParticleSystem vfxNsfx = Instantiate(enemyExplosionVFXnSFX, transform.position, Quaternion.identity);
+        vfxNsfx.transform.parent = spawnParent.transform;
         Destroy(this.gameObject);
     }
 
